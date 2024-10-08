@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onyeka's 3D Portfolio</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #283747, #2C3E50, #212F3C);
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      perspective: 1000px;
+    }
+
+    /* Container for the 3D Cube */
+    .cube-container {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 15s infinite linear;
+    }
+
+    /* Cube Faces */
+    .cube-face {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(50, 50, 50, 0.8);
+      border: 1px solid #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Front Face */
+    .cube-face.front {
+      transform: translateZ(150px);
+    }
+
+    /* Back Face */
+    .cube-face.back {
+      transform: rotateY(180deg) translateZ(150px);
+    }
+
+    /* Right Face */
+    .cube-face.right {
+      transform: rotateY(90deg) translateZ(150px);
+    }
+
+    /* Left Face */
+    .cube-face.left {
+      transform: rotateY(-90deg) translateZ(150px);
+    }
+
+    /* Top Face */
+    .cube-face.top {
+      transform: rotateX(90deg) translateZ(150px);
+    }
+
+    /* Bottom Face */
+    .cube-face.bottom {
+      transform: rotateX(-90deg) translateZ(150px);
+    }
+
+    /* 3D Cube Rotation Animation */
+    @keyframes rotateCube {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      25% {
+        transform: rotateX(0deg) rotateY(90deg);
+      }
+      50% {
+        transform: rotateX(0deg) rotateY(180deg);
+      }
+      75% {
+        transform: rotateX(0deg) rotateY(270deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    /* Styles for Content */
+    .content {
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #cfd8dc;
+    }
+
+    .content p {
+      font-size: 16px;
+      margin: 10px 20px;
+      color: #b0bec5;
+    }
+
+    /* Image Styling */
+    .content img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 2px solid #546e7a;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cube-container">
+  <!-- Front Face -->
+  <div class="cube-face front">
+    <div class="content">
+      <h2>Welcome to Onyeka's Portfolio</h2>
+      <p>An AI-driven automotive data application leveraging LinkedIn data integration.</p>
+    </div>
+  </div>
+
+  <!-- Back Face -->
+  <div class="cube-face back">
+    <div class="content">
+      <h2>Project 2: Cloud Solutions</h2>
+      <p>A scalable microservices-based application designed with Golang and AWS.</p>
+    </div>
+  </div>
+
+  <!-- Right Face -->
+  <div class="cube-face right">
+    <div class="content">
+      <h2>Project 3: E-commerce Platform</h2>
+      <p>An accessories e-commerce platform with integrated AI chatbot support.</p>
+    </div>
+  </div>
+
+  <!-- Left Face -->
+  <div class="cube-face left">
+    <div class="content">
+      <h2>Client Reviews</h2>
+      <p>"Onyeka's work is exceptional. He built a robust data pipeline that increased our efficiency by 35%!"</p>
+    </div>
+  </div>
+
+  <!-- Top Face - Profile Image -->
+  <div class="cube-face top">
+    <div class="content">
+      <h2>About Me</h2>
+      <img src="https://terraform-odigwe-bucket-07102024-2.s3.amazonaws.com/profile.png" alt="Onyeka's Profile Picture">
+      <p>Experienced software architect specializing in AI, cloud solutions, and data-driven insights.</p>
+    </div>
+  </div>
+
+  <!-- Bottom Face -->
+  <div class="cube-face bottom">
+    <div class="content">
+      <h2>Contact</h2>
+      <p>Email: odigwebuike@gmail.com | LinkedIn: https://www.linkedin.com/in/onyeka-daniel-igwebuike/</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

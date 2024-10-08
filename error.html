@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #283747, #212f3d);
+      color: #e0e0e0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      animation: slideDown 1s ease-out;
+    }
+
+    /* Error Heading with 3D Effect */
+    h1 {
+      font-size: 100px;
+      margin: 0;
+      color: #b0bec5;
+      text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: floating 3s infinite ease-in-out;
+    }
+
+    /* Profile Image */
+    .container img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 30px 0;
+      border: 3px solid #546e7a;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.5s;
+    }
+
+    .container img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Error Message */
+    p {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #b0bec5;
+    }
+
+    /* Back Button */
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: #ffffff;
+      background: #546e7a;
+      border: 2px solid #546e7a;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    a:hover {
+      background: #c0392b;
+      border-color: #c0392b;
+      transform: translateY(-5px);
+    }
+
+    /* Floating Animation */
+    @keyframes floating {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* Slide-in Animation */
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <!-- Profile Image from S3 -->
+    <img src="https://your-s3-bucket-url.s3.amazonaws.com/profile.png" alt="Onyeka's Profile Picture">
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <a href="index.html">Go Back to Home</a>
+  </div>
+</body>
+</html>
